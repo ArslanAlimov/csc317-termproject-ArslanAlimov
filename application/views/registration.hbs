@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type = "text/css" href = "/public/css/stylesheet.css">
+    <link rel="icon" type="image/png" href=""/>
+    <script defer src = "/public/js/frontendjs.js"></script>
+    <title>Register</title>
+</head>
+<body>
+    <div class = "grid-container">
+        <header>
+        {{> navbar}}
+        </header>
+        <div class = "site-content id = "site-content"">
+            <div class = "login-form">
+                <form action = "/users/register" method = "POST" enctype = "x-www-form-urlencoded">
+                    <label>Username: </label>
+                    <input type = "text" id = "username" placeholder = "username" required name = "username" >
+                    <br>    
+
+                    <label>Email Address: </label>
+                    <input type = "email" input type = "text" id = "email" placeholder = "email address" required name = "email">
+                    <br>
+
+                    <label>Password: </label>
+                    <input type = "password" id = "password" placeholder = "password" required name = "password">
+                    <br>
+
+                    <label>Confirm Password: </label>
+                    <input type = "password" id = "password" placeholder = "confirm password" required name = "confirmpassword">
+                    <br>
+
+                    <input type = "checkbox" id = "ageverification" name = "ageverification">
+                    <label for = "ageverification"> I am at least 13 years of age.</label><br>
+
+                    <input type = "checkbox" id = "tos" name = "tos">
+                    <label for = "tos"> I have read and agreed to the <a href="https://github.com/ArslanAlimov">Terms of Service</a> and <a href="https://github.com/ArslanAlimov">Privacy Agreement</a>.</label><br>
+                    
+                    <button type = "submit">Create Account</button>
+                    <button type = "reset">Reset</button>
+                </form>
+            </div>
+            Already have an account? <a href = "/login">Click here to login.</a>
+        </div>
+        
+        <footer>
+            {{> footer}}
+        </footer>
+    </div>
+</body>   
+</html>

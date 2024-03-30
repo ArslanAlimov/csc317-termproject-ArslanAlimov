@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" type = "text/css" href = "/public/css/stylesheet.css">
+    <link rel="icon" type="image/png" href=""/>
+    <script defer src = "/public/js/frontendjs.js"></script>
+    <title>Arslan Alimov - Login</title>
+</head>
+<body>
+    <div class = "grid-container">
+        <header>
+            {{> navbar}}
+        </header>
+        <div class = "site-content" id = "site-content">
+            <div class = "login-form">
+                <form id = "login-form" method = "POST" action = "/users/login" enctype = "application/x-www-form-urlencoded">
+                    <label for = "username">Username: </label>
+                    <input type = "text" id = "username" placeholder = "Username" require name = "username">
+                    <br>
+
+                    <labelf for = "password">Password: </label>
+                    <input type = "password" id = "password" placeholder = "Password" required name = "password">
+                    <br>
+                    
+                    <button type = "submit" id = "submit">Login</button>
+                </form>
+            </div>
+            Need an account? <a href = "/registration">Click here to register.</a>
+        </div>
+        
+        <footer>
+            {{> footer}}
+        </footer>
+    </div>  
+</body>   
+</html>

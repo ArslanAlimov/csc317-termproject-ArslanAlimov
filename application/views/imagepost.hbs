@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Images Posted</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../public/css/stylesheet.css">
+    </head>
+
+    <body>
+                <header>
+            {{> navbar}}
+        </header>
+<div class="row">  
+
+        <div class="titleofPage"> 
+        <div id = "image-post-title"><strong>{{currentPost.title}}</strong></div></br>
+         <h2>Hover Over To See Information About Author</h2>
+        </div> 
+        
+        <div class="information"> 
+            <br><div id = "image-post-author">Author: {{currentPost.username}}</div></br>
+            <div id = "image-post-date">Date: {{currentPost.created}}</div></br>
+            <div id = "image-post-description">Description: {{currentPost.description}}</div>
+         </div> 
+        
+         <div id = "image-post">
+            <a href = "/{{currentPost.photopath}}"><img id = "image-post-image" src = "/{{currentPost.photopath}}" max-width = "90%"style="width:200px;height:200px;"> </a></br>
+        </div>
+            </div>
+                </fieldset>
+    {{#if logged}}
+    <fieldset class="comments">
+        <br>Comments:
+
+        {{> comment}}
+                Not Working at this moment ='( only posts in database
+        <div id="comments">
+
+        </br>
+
+        </div>
+
+      </fieldset>
+    <form id="comment-form" action="/users/postComment" method="POST" enctype="application/x-www-form-urlencoded">
+    <label for="comment-box">Post your Comment:</label><br/>
+    <textarea placeholder="Comment..." id="comment" name="comment" cols="30"></textarea>
+    <br/><br/><div id="error">Comment can't be blank</div><br/>
+    <input id="submit" type="Submit" value="Submit"><br/><br/>
+    </form>
+    {{else}}
+        <div><a href="/login">Log in</a> to leave a comment</div><br/><br/>
+    {{/if}}
+</div>
+        <footer>
+            {{> footer}}
+        </footer>
+    </div>
+</body> 
+
+</html>

@@ -1,0 +1,17 @@
+<img src = "">
+    <nav>
+        <ul>
+            <a href = "/">Home</a>
+            <a href = "/postimage">Upload</a>
+
+            {{#if logged}}
+            <a id = "logout-button">Log Out</a>
+            {{else}}
+            <a id = "login-button" href = "/login">Log In</a>
+            {{/if}}
+                    <input id = "search-text" type = "search" placeholder = "Search?">
+        <button type = "submit" id = "search-button">Search</button>
+        </ul>  
+
+    </nav>
+

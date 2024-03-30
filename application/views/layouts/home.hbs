@@ -1,0 +1,25 @@
+
+{{{body}}}
+
+{{!-- add error/success messages --}}
+{{#if (emptyObject messages)}}
+{{> flashmessage}}
+{{/if}}
+
+{{!-- add proper log out functionality --}}
+{{#if logged}}
+    <script>
+        let logButton = document.getElementById('logout-button');
+        if(logButton) {
+            logButton.onclick = (even) => {
+                fetch('/users/logout', {
+                    method:"POST"
+                })
+                .then((data) => {
+                    location.replace('/');
+                })
+            }
+        }
+    </script>
+{{/if}}    
+
